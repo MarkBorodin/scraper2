@@ -5,7 +5,7 @@
 
 clone repository:
 ```
-git clone https://gitlab.com/MarkBorodin/test_scraper
+git clone https://github.com/MarkBorodin/test_scraper.git
 ```
 move to folder "test_scraper":
 ```
