@@ -58,11 +58,6 @@ test_task_parser.py
 
 ### second way to parse data - using Scrapy, scrapy-splash, bs4:
 
-move to folder "test_scraper":
-```
-cd test_scraper
-```
-
 pull the image for scrapy-splash:
 
 ```
