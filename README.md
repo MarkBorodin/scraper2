@@ -5,16 +5,16 @@
 
 clone repository:
 ```
-git clone https://github.com/MarkBorodin/test_scraper.git
+git clone https://github.com/MarkBorodin/scraper.git
 ```
-move to folder "test_scraper":
+move to folder "scraper":
 ```
-cd test_scraper
+cd scraper
 ```
 
 ### run database
 
-run on command line:
+run on command line in the project folder:
 
 ```
 docker-compose up -d
@@ -58,7 +58,12 @@ test_task_parser.py
 
 ### second way to parse data - using Scrapy, scrapy-splash, bs4:
 
-pull the image:
+move to folder "test_scraper":
+```
+cd test_scraper
+```
+
+pull the image for scrapy-splash:
 
 ```
 sudo docker pull scrapinghub/splash
@@ -69,10 +74,6 @@ start the container:
 sudo docker run -it -p 8050:8050 --rm scrapinghub/splash
 ```
 
-move to folder "test_scraper":
-```
-cd test_scraper
-```
 run spider:
 ```
 scrapy crawl myspider

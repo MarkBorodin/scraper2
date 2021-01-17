@@ -35,7 +35,7 @@ class MyspiderSpider(scrapy.Spider):
         item['h4'] = str([h4.text.strip() for h4 in soup.find_all('h4')])
         item['h5'] = str([h5.text.strip() for h5 in soup.find_all('h5')])
         item['p'] = str([p.text.strip() for p in soup.find_all('p')])
-        item['score'] = str(random.randint(1, 101))
+        item['score'] = str(random.randint(1, 100))
         item['department'] = str(random.choice(['Government', 'School', 'Non-Profit', 'Marketing', 'Development']))
         print(item)
         return item

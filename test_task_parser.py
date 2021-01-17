@@ -51,7 +51,7 @@ def get_page_data(html):
         'h4': str(h4),
         'h5': str(h5),
         'p': str(p),
-        'score': random.randint(1, 101),
+        'score': random.randint(1, 100),
         'department': random.choice(['Government', 'School', 'Non-Profit', 'Marketing', 'Development']),
     }
     return data
