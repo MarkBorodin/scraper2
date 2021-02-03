@@ -5,11 +5,11 @@
 
 clone repository:
 ```
-git clone https://github.com/MarkBorodin/scraper.git
+git clone https://github.com/MarkBorodin/scraper2.git
 ```
-move to folder "scraper":
+move to folder "scraper2":
 ```
-cd scraper
+cd scraper2
 ```
 
 ### run database
@@ -48,31 +48,14 @@ to install the required libraries, run on command line:
 pip install -r requirements.txt
 ```
 
-### the first way to parse data - using pyppeteer, bs4:
-
-to parse the data and write it to the database (and create tables in the database if not contained), run:
+to create tables run file:
 ```
-test_task_parser.py
-```
-
-
-### second way to parse data - using Scrapy, scrapy-splash, bs4:
-
-pull the image for scrapy-splash:
-
-```
-sudo docker pull scrapinghub/splash
-```
-
-start the container:
-```
-sudo docker run -it -p 8050:8050 --rm scrapinghub/splash
+create_db.py
 ```
 
 run spider:
 ```
-scrapy crawl myspider
+scrapy crawl my_sitemap_spider
 ```
 
-###all data will be written to the database
 ### Finish

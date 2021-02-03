@@ -3,7 +3,9 @@ attrs==20.3.0
 Automat==20.2.0
 beautifulsoup4==4.9.3
 bs4==0.0.1
+certifi==2020.12.5
 cffi==1.14.4
+chardet==4.0.0
 click==7.1.2
 constantly==15.1.0
 cryptography==3.3.1
@@ -35,6 +37,7 @@ PyHamcrest==2.0.2
 pyOpenSSL==20.0.1
 pyppeteer==0.2.5
 queuelib==1.5.0
+requests==2.25.1
 Scrapy==2.4.1
 scrapy-selenium==0.0.7
 scrapy-splash==0.7.2
