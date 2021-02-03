@@ -3,6 +3,7 @@ import uuid
 import psycopg2
 import requests
 from bs4 import BeautifulSoup
+from scrapy.http import Request
 from scrapy.spiders import SitemapSpider
 
 from test_scraper.items import Subpage, Home_Page
@@ -18,19 +19,24 @@ class MySpider(SitemapSpider):
                     ]
 
     sitemap_rules = [
-        # looking for the main page
-        ('^https://www.sos-kinderdorf.ch/$', 'parse_main'),
         # other urls
-        ('', 'parse')
+        ('/2017/', 'parse')
     ]
 
-    def parse_main(self, response):
+    home_page = 'https://www.sos-kinderdorf.ch/'
+
+    def start_requests(self):
+        self.parse_main()
+        for url in self.sitemap_urls:
+            yield Request(url, self._parse_sitemap)
+
+    def parse_main(self):
         # create item
         item = Home_Page()
 
         item['uuid'] = str(uuid.uuid1())
-        item['url'] = response.url
-        item['sitemap_exists'] = 't' if requests.get(item['url'] + 'sitemap.xml').status_code == 200 else 'f'
+        item['url'] = self.home_page
+        item['sitemap_exists'] = 't' if requests.get(self.home_page + 'sitemap.xml').status_code == 200 else 'f'
 
         # write to db Home_Page
         hostname = '127.0.0.1'
@@ -94,7 +100,7 @@ class MySpider(SitemapSpider):
 
         for tag, num in zip(all_tags, range(1, len_tags)):
             if tag.name in required_tags:
-                item['text'] = str(tag.text)
+                item['text'] = str(tag)
                 item['appearance_position'] = str(num)
                 item['subpage'] = subpage_id
 
