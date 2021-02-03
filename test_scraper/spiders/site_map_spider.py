@@ -20,7 +20,7 @@ class MySpider(SitemapSpider):
 
     sitemap_rules = [
         # other urls
-        ('/2017/', 'parse')
+        ('', 'parse')
     ]
 
     home_page = 'https://www.sos-kinderdorf.ch/'
