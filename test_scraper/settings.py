@@ -73,10 +73,10 @@ ROBOTSTXT_OBEY = False
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-ITEM_PIPELINES = {
-   'test_scraper.pipelines.TestScraperPipeline': 300,
-   # 'myproject.pipelines.JsonWriterPipeline': 800 #another pipline
-}
+# ITEM_PIPELINES = {
+#    'test_scraper.pipelines.TestScraperPipeline': 300,
+#    # 'myproject.pipelines.JsonWriterPipeline': 800 # another pipline
+# }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

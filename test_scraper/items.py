@@ -6,20 +6,20 @@
 import scrapy
 
 
-class TestScraperItem(scrapy.Item):
+class Home_Page(scrapy.Item):
     uuid = scrapy.Field()
     url = scrapy.Field()
+    sitemap_exists = scrapy.Field()
+
+
+class Subpage(scrapy.Item):
+    uuid = scrapy.Field()
+    url = scrapy.Field()
+    indexed_in_sitemap = scrapy.Field()
+    robots_follow_no_follow = scrapy.Field()
+    home_page = scrapy.Field()
+    subpage = scrapy.Field()
     site_title = scrapy.Field()
     meta_description = scrapy.Field()
-    html_lang = scrapy.Field()
-    a_href = scrapy.Field()
-    a = scrapy.Field()
-    alt = scrapy.Field()
-    h1 = scrapy.Field()
-    h2 = scrapy.Field()
-    h3 = scrapy.Field()
-    h4 = scrapy.Field()
-    h5 = scrapy.Field()
-    p = scrapy.Field()
-    score = scrapy.Field()
-    department = scrapy.Field()
+    appearance_position = scrapy.Field()
+    text = scrapy.Field()
