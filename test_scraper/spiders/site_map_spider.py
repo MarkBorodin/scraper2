@@ -11,15 +11,23 @@ from test_scraper.items import Subpage, Home_Page
 
 class MySpider(SitemapSpider):
     name = 'my_sitemap_spider'
-    allowed_domains = ['sos-kinderdorf.ch']
-    home_page = 'https://www.sos-kinderdorf.ch/'
+    home_page = 'https://www.wroclaw.pl/'
 
     def start_requests(self):
+        # parse home page
         self.parse_main()
+
+        # get sitemap.xml for sitemap_urls
         sitemap = self.home_page + 'sitemap.xml'
         response = requests.get(sitemap)
         if response.status_code == 200:
-            self.sitemap_urls = (sitemap,)
+            self.sitemap_urls = [sitemap]
+
+        # get robots.txt for sitemap_urls
+        sitemap_with_robots = self.home_page + 'robots.txt'
+        response = requests.get(sitemap_with_robots)
+        if response.status_code == 200:
+            self.sitemap_urls.append(sitemap_with_robots)
 
         for url in self.sitemap_urls:
             yield Request(url, self._parse_sitemap)
