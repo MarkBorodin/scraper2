@@ -53,9 +53,15 @@ to create tables run file:
 create_db.py
 ```
 
-run spider:
+run spider with url. Enter url via command line:
 ```
-scrapy crawl my_sitemap_spider
+scrapy crawl spider_name -a home_page='your_url'
+```
+
+For example:
+
+```
+scrapy crawl sitemap_spider -a home_page='https://www.sos-kinderdorf.ch/'
 ```
 
 ### Finish

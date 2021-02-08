@@ -13,5 +13,11 @@ services:
     environment:
       POSTGRES_HOST_AUTH_METHOD: "trust"
 
+  splash:
+    image: "scrapinghub/splash"
+    ports:
+      - "8050:8050"
+    command: --disable-private-mode
+
 volumes:
   pgdata: {}

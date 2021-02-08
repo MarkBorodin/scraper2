@@ -12,8 +12,7 @@ BOT_NAME = 'test_scraper'
 SPIDER_MODULES = ['test_scraper.spiders']
 NEWSPIDER_MODULE = 'test_scraper.spiders'
 
-# SPLASH_URL = 'http://192.168.59.103:8050'
-SPLASH_URL = 'http://localhost:8050/'
+SPLASH_URL = 'http://localhost:8050'
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
@@ -27,7 +26,6 @@ DOWNLOADER_MIDDLEWARES = {
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 SPIDER_MIDDLEWARES = {
     'scrapy_splash.SplashDeduplicateArgsMiddleware': 100,
-    # 'test_scraper.middlewares.TestScraperSpiderMiddleware': 543,
 }
 
 DUPEFILTER_CLASS = 'scrapy_splash.SplashAwareDupeFilter'
