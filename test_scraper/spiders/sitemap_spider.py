@@ -12,9 +12,6 @@ from test_scraper.items import Subpage, Home_Page
 class MySpider(SitemapSpider):
     name = 'sitemap_spider'
     home_page = []
-    sitemap_rules = [
-        ('/2017/', 'parse')
-    ]
 
     def start_requests(self):
         """get start urls. Parse home page"""

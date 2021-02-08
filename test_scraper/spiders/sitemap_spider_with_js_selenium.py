@@ -19,9 +19,6 @@ logger = logging.getLogger(__name__)
 class MySpider(SitemapSpider):
     name = 'sitemap_spider_with_js_selenium'
     home_page = []
-    sitemap_rules = [
-        ('/2017/', 'parse')
-    ]
 
     def _parse_sitemap(self, response):
         """get all urls and call for each one self.parse"""
